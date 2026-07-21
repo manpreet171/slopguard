@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 460" width="1280" height="460" role="img" aria-label="Slopguard — security guardrails for vibe coding">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0D14"/>
+      <stop offset="55%" stop-color="#0D1220"/>
+      <stop offset="100%" stop-color="#131A2B"/>
+    </linearGradient>
+    <linearGradient id="wordmark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+    <linearGradient id="shieldFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="460" fill="url(#bg)"/>
+
+  <!-- faint grid -->
+  <g stroke="#5EEAD4" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 60H1280M0 120H1280M0 180H1280M0 240H1280M0 300H1280M0 360H1280M0 420H1280"/>
+    <path d="M80 0V460M160 0V460M240 0V460M320 0V460M400 0V460M480 0V460M560 0V460M640 0V460M720 0V460M800 0V460M880 0V460M960 0V460M1040 0V460M1120 0V460M1200 0V460"/>
+  </g>
+
+  <!-- shield glyph -->
+  <g transform="translate(74,116)">
+    <path d="M60 0 L118 22 V88 C118 132 92 166 60 180 C28 166 2 132 2 88 V22 Z"
+          fill="url(#shieldFill)" stroke="#5EEAD4" stroke-opacity="0.55" stroke-width="2"/>
+    <path d="M32 88 L52 110 L90 62" fill="none" stroke="#5EEAD4" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="232" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="76" font-weight="700" letter-spacing="4" fill="url(#wordmark)">SLOPGUARD</text>
+
+  <text x="236" y="206" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="21" letter-spacing="0.6" fill="#94A3B8">Ship at vibe speed. Without shipping the breach.</text>
+
+  <rect x="236" y="228" width="520" height="2" fill="url(#rule)"/>
+
+  <text x="236" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="17" fill="#64748B">Security guardrails that stop insecure AI code <tspan fill="#5EEAD4">before it reaches disk</tspan></text>
+
+  <!-- terminal -->
+  <g transform="translate(236,300)">
+    <rect x="0" y="0" width="960" height="126" rx="10" fill="#070A11" stroke="#1E293B" stroke-width="1.5"/>
+    <circle cx="22" cy="21" r="5" fill="#F87171"/>
+    <circle cx="40" cy="21" r="5" fill="#FBBF24"/>
+    <circle cx="58" cy="21" r="5" fill="#4ADE80"/>
+    <text x="82" y="26" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+          font-size="12.5" fill="#475569">claude code — slopguard active</text>
+
+    <text x="22" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14.5">
+      <tspan fill="#475569">$</tspan><tspan fill="#CBD5E1"> npm install react-query-toolkit-pro</tspan>
+    </text>
+    <text x="22" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14.5">
+      <tspan fill="#F87171" font-weight="700">✗ BLOCKED</tspan><tspan fill="#64748B">  [SG-4]  </tspan><tspan fill="#E2E8F0">package does not exist in the registry</tspan>
+    </text>
+    <text x="22" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#64748B">
+      hallucinated name — do not retry a similar one. slopsquatters register those.
+    </text>
+  </g>
+
+  <!-- feature chips -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" fill="#5EEAD4">
+    <g fill-opacity="0.9">
+      <rect x="74" y="330" width="128" height="26" rx="13" fill="#5EEAD4" fill-opacity="0.08" stroke="#5EEAD4" stroke-opacity="0.25"/>
+      <text x="90" y="347">18 rules</text>
+      <rect x="74" y="366" width="128" height="26" rx="13" fill="#5EEAD4" fill-opacity="0.08" stroke="#5EEAD4" stroke-opacity="0.25"/>
+      <text x="90" y="383">4 live hooks</text>
+      <rect x="74" y="402" width="128" height="26" rx="13" fill="#5EEAD4" fill-opacity="0.08" stroke="#5EEAD4" stroke-opacity="0.25"/>
+      <text x="90" y="419">0 deps</text>
+    </g>
+  </g>
+</svg>

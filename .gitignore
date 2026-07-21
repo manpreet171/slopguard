@@ -1,0 +1,18 @@
+# Secrets — never commit these (SG-1)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+credentials.json
+
+# Slopguard's own config baseline
+.slopguard/
+
+node_modules/
+dist/
+build/
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "slopguard",
+  "displayName": "Slopguard",
+  "version": "1.0.0",
+  "description": "Blocks insecure AI-generated code at the moment it is written. Stops hardcoded secrets, SQL injection, hallucinated packages, and agent supply-chain attacks before they reach disk.",
+  "author": {
+    "name": "Manpreet Singh",
+    "email": "singh.manpreet171900@gmail.com",
+    "url": "https://github.com/manpreet171"
+  },
+  "homepage": "https://github.com/manpreet171/slopguard",
+  "repository": "https://github.com/manpreet171/slopguard",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "vibe-coding",
+    "appsec",
+    "slopsquatting",
+    "supply-chain",
+    "owasp",
+    "guardrails"
+  ]
+}

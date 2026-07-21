@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/guard-write.mjs\"",
+            "statusMessage": "Slopguard: inspecting generated code",
+            "timeout": 20
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/guard-bash.mjs\"",
+            "statusMessage": "Slopguard: verifying packages against registry",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/guard-session.mjs\" \"${CLAUDE_PLUGIN_DATA}\"",
+            "statusMessage": "Slopguard: checking agent supply chain",
+            "timeout": 25
+          }
+        ]
+      }
+    ]
+  }
+}

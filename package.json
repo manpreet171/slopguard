@@ -1,0 +1,23 @@
+{
+  "name": "slopguard",
+  "version": "1.0.0",
+  "description": "Security guardrails for vibe coding. Blocks insecure AI-generated code at the moment it is written.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node test/run-tests.mjs"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "security",
+    "vibe-coding",
+    "claude-code",
+    "slopsquatting",
+    "supply-chain",
+    "owasp",
+    "appsec"
+  ]
+}
