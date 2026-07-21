@@ -7,6 +7,9 @@
 id_rsa*
 credentials.json
 
+# Marketing drafts - not part of the public repo
+marketing/
+
 # Slopguard's own config baseline
 .slopguard/
 
