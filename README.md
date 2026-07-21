@@ -30,15 +30,15 @@ your build, and probably your deploy.
 **Slopguard moves the check upstream, into the one second between "the model
 produced it" and "it exists on disk."**
 
-```
-$ npm install react-query-toolkit-pro
-
-✗ BLOCKED  [SG-4]  package does not exist in the registry
-           hallucinated name — do not retry a similar one.
-           slopsquatters register those.
-```
+<p align="center">
+  <img src="assets/demo.gif" alt="Slopguard blocking a service_role key leak and a hallucinated npm package" width="100%">
+</p>
 
 That is not a linter warning you scroll past. The write did not happen.
+
+Note the middle beat: the block hands the model a rule ID and a concrete fix, so
+it corrects itself and moves on. Most of the time you don't do anything — you just
+watch it get it right on the second try.
 
 ---
 
