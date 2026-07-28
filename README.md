@@ -10,6 +10,8 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-94A3B8?style=flat-square&labelColor=0A0D14" alt="MIT"></a>
 </p>
 
+<p align="center">Created by <a href="https://www.linkedin.com/in/manpreet17/">Manpreet Singh</a> · Part of <a href="https://singhlabs.dev/slopguard/">Singh Labs</a></p>
+
 ---
 
 Your AI writes code faster than you can read it. That is the point, and it is not
