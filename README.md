@@ -332,7 +332,7 @@ MIT. See [LICENSE](LICENSE).
   Built by <b>Manpreet Singh</b><br>
   <a href="https://www.linkedin.com/in/manpreet17/">LinkedIn</a> ·
   <a href="https://medium.com/@singh.manpreet171900">Medium</a> ·
-  <a href="mailto:singh.manpreet171900@gmail.com">Email</a>
+  <a href="mailto:info@singhlabs.dev">Email</a>
 </p>
 
 <p align="center">

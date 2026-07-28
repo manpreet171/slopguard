@@ -6,7 +6,7 @@
   "description": "Blocks insecure AI-generated code at the moment it is written. Stops hardcoded secrets, SQL injection, hallucinated packages, and agent supply-chain attacks before they reach disk.",
   "author": {
     "name": "Manpreet Singh",
-    "email": "singh.manpreet171900@gmail.com",
+    "email": "info@singhlabs.dev",
     "url": "https://github.com/manpreet171"
   },
   "homepage": "https://github.com/manpreet171/slopguard",
