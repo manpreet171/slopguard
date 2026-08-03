@@ -16,7 +16,12 @@ try {
   const ti = input.tool_input || {};
   const filePath = ti.file_path || ti.notebook_path || '';
 
-  if (isAllowlisted(filePath)) allow();
+  // NOTE: the allowlist check happens *after* the invisible-character scan,
+  // further down. The allowlist exists so that .env.example and rule files can
+  // legitimately contain secret-shaped strings — but an instruction file is the
+  // one place invisible control characters are most dangerous, because that is
+  // the Rules File Backdoor. Allowlisting it there would exempt the attack this
+  // plugin advertises hardest.
 
   // Gather every payload shape the edit tools use.
   const blobs = [];
@@ -29,11 +34,14 @@ try {
   const content = blobs.join('\n');
   if (!content.trim()) allow();
 
-  const findings = scanContent(content, filePath);
+  // Secret- and code-shaped findings are suppressed on allowlisted paths
+  // (.env.example, fixtures, the rule library itself) — those legitimately
+  // contain patterns that look like the real thing.
+  const findings = isAllowlisted(filePath) ? [] : scanContent(content, filePath);
 
-  // An agent writing invisible control characters into a file is either a
-  // corrupted paste or an injected payload. Neither is something you want
-  // silently committed.
+  // Invisible characters are NEVER allowlisted. An agent writing control
+  // characters into a file is either a corrupted paste or an injected payload,
+  // and an instruction file is exactly where that payload wants to land.
   const invisible = findInvisible(content);
   if (invisible.length) {
     findings.unshift({

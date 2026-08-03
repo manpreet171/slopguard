@@ -13,7 +13,10 @@
 
 /** Files where a leaked server-side key becomes a public key. */
 export const CLIENT_SIDE_HINTS = [
-  /(^|[\\/])(src|app|pages|components|public|static|assets|www|client|frontend)[\\/]/i,
+  // `app/` is deliberately absent: it is the *server* directory in Rails,
+  // Laravel and Django, so treating it as a client bundle flagged server code
+  // that is doing exactly the right thing.
+  /(^|[\\/])(src|pages|components|public|static|assets|www|client|frontend)[\\/]/i,
   /\.(jsx|tsx|vue|svelte|astro)$/i,
 ];
 
@@ -54,7 +57,9 @@ export const SECRET_PATTERNS = [
   { id: 'SG-1', name: 'GitHub fine-grained token', re: /\bgithub_pat_[A-Za-z0-9_]{60,}\b/ },
   { id: 'SG-1', name: 'Stripe live secret key', re: /\bsk_live_[A-Za-z0-9]{16,}\b/ },
   { id: 'SG-1', name: 'Stripe restricted key', re: /\brk_live_[A-Za-z0-9]{16,}\b/ },
-  { id: 'SG-1', name: 'OpenAI API key', re: /\bsk-(proj-)?[A-Za-z0-9_-]{32,}\b/ },
+  // No interior hyphens. Real keys have none; long kebab-case identifiers like
+  // `sk-loading-placeholder-animation-container` do, and were a hard DENY.
+  { id: 'SG-1', name: 'OpenAI API key', re: /\bsk-(proj-)?[A-Za-z0-9_]{32,}\b/ },
   { id: 'SG-1', name: 'Anthropic API key', re: /\bsk-ant-[A-Za-z0-9_-]{32,}\b/ },
   { id: 'SG-1', name: 'Google API key', re: /\bAIza[0-9A-Za-z_-]{35}\b/ },
   { id: 'SG-1', name: 'Slack token', re: /\bxox[baprs]-[0-9A-Za-z-]{10,}\b/ },
@@ -78,7 +83,9 @@ export const CLIENT_SECRET_PATTERNS = [
     // service_role JWTs carry the role in the payload; match the claim.
     re: /\beyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]*(c2VydmljZV9yb2xl|InNlcnZpY2Vfcm9sZSI)[A-Za-z0-9_-]*\.[A-Za-z0-9_-]+/,
   },
-  { id: 'SG-6', name: 'SUPABASE_SERVICE_ROLE_KEY referenced in client bundle', re: /SUPABASE_SERVICE_ROLE(_KEY)?/ },
+  // Requires an assignment. A comment warning people NOT to put the key here
+  // used to be a hard DENY, which is the fastest way to get uninstalled.
+  { id: 'SG-6', name: 'SUPABASE_SERVICE_ROLE_KEY referenced in client bundle', re: /SUPABASE_SERVICE_ROLE(_KEY)?\s*[=:]\s*["'`]/ },
   { id: 'SG-6', name: 'service_role client construction', re: /createClient\s*\([^)]*service_?role/i },
 ];
 
