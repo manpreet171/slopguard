@@ -70,7 +70,14 @@ Rules teach. Hooks enforce. You want both.
 Then put the rules in whatever project you're working on:
 
 ```bash
-curl -O https://raw.githubusercontent.com/manpreet171/slopguard/main/AGENTS.md
+curl -o SLOPGUARD.md https://raw.githubusercontent.com/manpreet171/slopguard/main/AGENTS.md
+```
+
+If you already keep an `AGENTS.md`, append the rules to it instead — this never
+overwrites the file your agent already reads:
+
+```bash
+curl -s https://raw.githubusercontent.com/manpreet171/slopguard/main/AGENTS.md >> AGENTS.md
 ```
 
 That's it. No config, no API key, no dependencies — the hooks are plain Node ESM
