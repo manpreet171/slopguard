@@ -245,6 +245,10 @@ manufactures confidence. So, precisely:
   are for, and ultimately what human review is for.
 - **It only sees what the agent writes.** Code you paste in yourself, or that
   arrives via `git pull`, is not inspected at write time.
+- **It inspects the Write and Edit tools, not Bash.** A file created through
+  shell redirection, a heredoc, or `tee` lands on disk uninspected. The Bash
+  hook checks the *command*, not the content it writes. If your agent writes
+  code through the shell, this guard does not see it.
 - **The registry check needs network.** It fails open on timeout — a guard that
   blocks your work when the wifi drops is a guard you uninstall.
 - **It is bypassable.** Anything determined to get around it will. It is a
