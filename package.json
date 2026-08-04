@@ -1,5 +1,5 @@
 {
-  "name": "slopguard",
+  "name": "slopguard-rules",
   "version": "1.0.0",
   "description": "Security guardrails for vibe coding. Blocks insecure AI-generated code at the moment it is written.",
   "type": "module",
@@ -19,5 +19,13 @@
     "supply-chain",
     "owasp",
     "appsec"
-  ]
+  ],
+  "files": [
+    "plugins",
+    "docs",
+    "AGENTS.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://singhlabs.dev/slopguard/"
 }
