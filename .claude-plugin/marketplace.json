@@ -9,10 +9,17 @@
     {
       "name": "slopguard",
       "source": "./plugins/slopguard",
-      "description": "Security guardrails for vibe coding. Blocks insecure AI-generated code at write time, verifies every package against the registry before install, and checks your agent's instruction files for tampering.",
-      "version": "1.0.0",
+      "description": "Security guardrails for vibe coding. Checks code before the Write and Edit tools touch disk, verifies packages against the real registry before install, and refuses invisible characters in agent instruction files.",
+      "version": "1.1.0",
       "category": "security",
-      "keywords": ["security", "vibe-coding", "slopsquatting", "supply-chain", "owasp"]
+      "keywords": [
+        "security",
+        "vibe-coding",
+        "slopsquatting",
+        "supply-chain",
+        "owasp"
+      ]
     }
-  ]
+  ],
+  "description": "Guardrails for people shipping code with AI agents — from Singh Labs."
 }
