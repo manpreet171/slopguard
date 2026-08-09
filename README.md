@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Slopguard — ship at vibe speed, without shipping the breach" width="100%">
+  <img src="assets/mark.png" alt="A bouncer refusing entry to a blob of sludge in an unconvincing disguise" width="300">
 </p>
 
 <p align="center">
