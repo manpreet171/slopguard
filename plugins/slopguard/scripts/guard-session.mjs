@@ -89,7 +89,9 @@ function sha(text) {
 try {
   const input = await readHookInput();
   const cwd = input.cwd || process.cwd();
-  const dataDir = process.argv[2] && !process.argv[2].includes('${') ? process.argv[2] : join(cwd, '.slopguard');
+  // Claude Code exports CLAUDE_PLUGIN_DATA to hook processes. Passing it as an
+  // argument instead would block the plugin directory's validator.
+  const dataDir = process.env.CLAUDE_PLUGIN_DATA || join(cwd, '.slopguard');
 
   const alerts = [];
   const notes = [];

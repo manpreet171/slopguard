@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "slopguard",
   "displayName": "Slopguard",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Checks AI-generated code before the Write and Edit tools touch disk: hardcoded secrets, SQL injection, unsafe shell and deserialization, and package names the model invented. Also refuses invisible characters in your agent instruction files.",
   "author": {
     "name": "Manpreet Singh",
@@ -12,6 +12,10 @@
   "homepage": "https://singhlabs.dev/slopguard/",
   "repository": "https://github.com/manpreet171/slopguard",
   "license": "MIT",
+  "icon": "./.claude-plugin/icon.png",
+  "supportUrl": "https://github.com/manpreet171/slopguard/issues",
+  "documentationUrl": "https://github.com/manpreet171/slopguard#readme",
+  "privacyPolicyUrl": "https://singhlabs.dev/privacy/",
   "keywords": [
     "security",
     "vibe-coding",

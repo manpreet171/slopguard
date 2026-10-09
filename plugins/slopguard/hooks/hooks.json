@@ -29,7 +29,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/guard-session.mjs\" \"${CLAUDE_PLUGIN_DATA}\"",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/guard-session.mjs\"",
             "statusMessage": "Slopguard: checking agent supply chain",
             "timeout": 25
           }
