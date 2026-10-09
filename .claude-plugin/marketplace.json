@@ -10,7 +10,7 @@
       "name": "slopguard",
       "source": "./plugins/slopguard",
       "description": "Security guardrails for vibe coding. Checks code before the Write and Edit tools touch disk, verifies packages against the real registry before install, and refuses invisible characters in agent instruction files.",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "category": "security",
       "keywords": [
         "security",

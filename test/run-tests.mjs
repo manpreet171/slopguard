@@ -127,6 +127,17 @@ for (const [expected, script, name, payload, net] of CASES) {
   }
 }
 
+// A caught secret must never be echoed back whole, however short it is.
+const AWS_ID = ['AKIA', 'IOSFODNN7EXAMPLE'].join('');
+const caught = JSON.stringify(await run('guard-write.mjs', { tool_input: { file_path: 'src/aws.js', content: `const keyId = "${AWS_ID}";` } }));
+if (caught.includes('SG-1') && !caught.includes(AWS_ID)) {
+  pass++;
+  console.log('  \x1b[32m✓\x1b[0m short secret is masked in the block message');
+} else {
+  failures.push({ name: 'short secret masked', expected: 'masked', got: caught.slice(0, 80) });
+  console.log('  \x1b[31m✗\x1b[0m short secret is masked in the block message');
+}
+
 const total = pass + failures.length;
 console.log(`\n  ${pass}/${total} passed\n`);
 

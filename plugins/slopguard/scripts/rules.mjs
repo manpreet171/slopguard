@@ -281,7 +281,7 @@ export function scanContent(content, filePath) {
       id: p.id,
       severity: 'deny',
       name: p.name,
-      evidence: redact(value),
+      evidence: redactSecret(value),
       fix: 'Move this to an environment variable or a secret manager, reference it via process.env / os.environ, and rotate the exposed credential — assume it is already public.',
     });
   }
@@ -294,7 +294,7 @@ export function scanContent(content, filePath) {
         id: p.id,
         severity: 'deny',
         name: p.name,
-        evidence: redact(m[0]),
+        evidence: redactSecret(m[0]),
         fix: 'This file ships to the browser. A service_role key there bypasses every Row Level Security policy you wrote — any visitor gets full database access. Use the anon/publishable key on the client and keep privileged calls behind a server route or Edge Function.',
       });
     }
@@ -322,4 +322,10 @@ export function redact(s) {
   const t = String(s).replace(/\s+/g, ' ').trim();
   if (t.length <= 24) return t;
   return `${t.slice(0, 12)}…${t.slice(-4)}`;
+}
+
+/** Like redact, but a short secret (an AWS key ID is 20) is masked too, never shown whole. */
+export function redactSecret(s) {
+  const t = redact(s);
+  return t.length <= 24 ? `${t.slice(0, 4)}…${t.slice(-2)}` : t;
 }

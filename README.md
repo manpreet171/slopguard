@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="#install"><img src="https://img.shields.io/badge/install-60_seconds-5EEAD4?style=flat-square&labelColor=0A0D14" alt="Install in 60 seconds"></a>
-  <a href="test/run-tests.mjs"><img src="https://img.shields.io/badge/tests-47%2F47-4ADE80?style=flat-square&labelColor=0A0D14" alt="47 of 47 tests passing"></a>
+  <a href="test/run-tests.mjs"><img src="https://img.shields.io/badge/tests-48%2F48-4ADE80?style=flat-square&labelColor=0A0D14" alt="48 of 48 tests passing"></a>
   <a href="docs/THREATS.md"><img src="https://img.shields.io/badge/every_claim-sourced-38BDF8?style=flat-square&labelColor=0A0D14" alt="Every claim sourced"></a>
   <img src="https://img.shields.io/badge/dependencies-0-818CF8?style=flat-square&labelColor=0A0D14" alt="Zero dependencies">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-94A3B8?style=flat-square&labelColor=0A0D14" alt="MIT"></a>
@@ -270,7 +270,7 @@ you). Move anything you disagree with, or add it to `ALLOWLIST_PATHS`.
 Test files, `node_modules`, lockfiles and `.env.example` are already skipped.
 
 ```bash
-npm test        # 47 cases: 22 must block, 4 must prompt, 21 must stay silent
+npm test        # 48 checks: 22 must block, 4 must prompt, 21 must stay silent, 1 masks a secret
 
 # or check a single payload by hand
 echo '{"tool_input":{"file_path":"a.js","content":"YOUR CODE"}}' \
